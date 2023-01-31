@@ -1,0 +1,58 @@
+@import "mixins";
+@import "variables";
+
+.cover {
+  width: 10rem;
+  margin: 0 auto;
+}
+.resume {
+  flex: 1;
+  margin-top: $regularSize;
+}
+
+.title {
+  h2 {
+    color: $white;
+    margin: 0 $regularSize 0 0;
+    font-size: $largeFont;
+    flex: 1;
+  }
+  p {
+    margin: $regularSize 0;
+  }
+}
+
+.synopsis {
+  margin-top: $regularSize;
+  padding-top: $regularSize;
+  border-top: 1px solid $dark;
+  h3 {
+    color: $white;
+    margin: 0 0 $regularSize 0;
+  }
+  p {
+    margin: $regularSize 0;
+    line-height: 200%;
+  }
+}
+
+@include tablet() {
+  .product {
+    display: flex;
+    align-items: stretch;
+  }
+  .title + div {
+    width: 12.5rem;
+  }
+  .resume {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 calc($regularSize * 2);
+  }
+  .synopsis {
+    margin-top: calc($regularSize * 2);
+    padding-top: calc($regularSize * 2);
+  }
+}

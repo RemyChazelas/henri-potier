@@ -1,0 +1,14 @@
+$fontFamily: "Montserrat", sans-serif;
+
+html {
+  font-size: $regularFont;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size-adjust: 100%;
+}
+
+body {
+  font-family: $fontFamily;
+  font-weight: $normalFont;
+  line-height: 1;
+}

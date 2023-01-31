@@ -1,11 +1,13 @@
 import Head from "next/head";
-import Spinner from "components/atoms/Spinner";
-import Wrapper from "components/molecules/Wrapper";
 import Header from "components/organisms/Header";
-import Library from "components/organisms/Library";
 import Footer from "components/organisms/Footer";
+import styles from "components/organisms/Cart/Cart.module.scss";
+import { CartResume, CartOffer } from "components/organisms/Cart";
+import Wrapper from "components/molecules/Wrapper";
+import { useCart } from "utils/hooks";
 
-export default function Home({ books }) {
+export default function Cart() {
+  const { cart } = useCart();
   return (
     <>
       <Head>
@@ -16,24 +18,17 @@ export default function Home({ books }) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
-      <Header books={books} />
+      <Header
+        minimize
+        breadcrumb={{ label: "Page d'accueil", path: "/", current: "Panier" }}
+      />
       <Wrapper>
-        {books ? (
-          <Library books={books} />
-        ) : (
-          <div data-testid="loader">
-            <Spinner theme="light" />
-          </div>
-        )}
+        <div className={styles.cart}>
+          <CartResume cart={cart} />
+          <CartOffer cart={cart} />
+        </div>
       </Wrapper>
       <Footer />
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const books = await fetch("https://henri-potier.techx.fr/books").then(
-    (response) => response.json()
-  );
-  return { props: { books } };
 }

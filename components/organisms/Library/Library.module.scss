@@ -1,0 +1,36 @@
+@import "mixins";
+@import "variables";
+
+.library {
+  padding: $regularSize 0;
+  h2 {
+    color: $white;
+    margin: 0;
+    padding: calc($regularSize/4) 0 $regularSize 0;
+    font-size: $largeFont;
+  }
+}
+.grid {
+  display: grid;
+  grid-gap: $regularSize;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+@include tablet() {
+  .library {
+    padding: calc($regularSize * 2) 0;
+    h2 {
+      padding: calc($regularSize / 2) 0 calc($regularSize * 2) 0;
+    }
+  }
+  .grid {
+    grid-gap: calc($regularSize * 2);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include desktop() {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,6 +1,34 @@
+## Projet Bibliothèque d'Henri Potier
+
+[Exercice technique](https://github.com/xebia-france/recruitment-tests/blob/master/ExerciceFront.md) pour Publicis Sapient.
+
+## Technologies
+
+- Framework JavaScript : [NextJS](https://nextjs.org/)
+- Design responsive : [SASS](https://sass-lang.com/)
+- Tests unitaires : [Jest](https://jestjs.io/fr/) + [Testing Library](https://testing-library.com/)
+
+## Fonctionnalités
+
+Brief :
+
+- [x] Interface affichant les livres disponibles à l'achat
+- [x] Outils de recherche libre parmi les livres disponibles
+- [x] Interface récapitulative du panier appliquant la meilleure offre commerciale possible
+- [x] Design moderne et responsive
+- [x] Tests unitaires
+
+Bonus :
+
+- [x] Interface présentant les livres individuellement
+- [x] Editions de la quantité de livre ajoutée au panier
+- [x] Navigation accessible au clavier
+
+## Lancer le projet
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### Dev
 
 First, run the development server:
 
@@ -8,31 +36,18 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing and pages auto-updates as you edit a file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Test
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Run all the tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run test
+# or
+yarn test
+```

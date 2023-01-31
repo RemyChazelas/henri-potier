@@ -1,0 +1,72 @@
+@import "mixins";
+@import "variables";
+
+.item {
+  display: flex;
+  padding: $regularSize;
+  & + .item {
+    border-top: 1px solid $grey;
+  }
+}
+
+.left {
+  width: 33%;
+  &:hover {
+    & + .right > a > p {
+      text-decoration: underline;
+    }
+  }
+}
+
+.right {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: $regularSize;
+  a {
+    margin-bottom: calc($regularSize/2);
+  }
+}
+
+.cover {
+  position: relative;
+  width: 100%;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: calc($regularSize/2) 0;
+  background: $white;
+  border-radius: calc($regularSize/5);
+
+  & > span {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+  }
+  & > button {
+    width: 3rem;
+  }
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@include tablet() {
+  .item {
+    padding: calc($regularSize * 2);
+  }
+  .left {
+    width: 7.75rem;
+  }
+  .right {
+    width: auto;
+    flex: 1;
+  }
+}
